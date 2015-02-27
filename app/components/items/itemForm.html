@@ -1,0 +1,18 @@
+<form name="myForm" novalidate >
+    <div ng-class="{ 'has-error' : myForm.name.$invalid }">
+        <input class="form-control" 
+               type="text" 
+               placeholder="name" 
+               name="name" 
+               ng-model="item.name" 
+               required/>
+    </div>
+    
+    <div ng-class="{ 'has-error' : myForm.amount.$invalid }">
+        <input class="form-control" 
+               type="text" placeholder="amount" name="amount" ng-model="item.amount" required/>
+    </div>
+    
+    <input type="submit" ng-click="addItem(item, myForm.$valid)" value="Add item"/>
+    
+</form>

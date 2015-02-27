@@ -1,0 +1,21 @@
+<div>
+
+    <datepicker ng-model="dateFrom"></datepicker>
+
+    <table class="table">
+        <thead>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Created</th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in items | filter : query | dateFrom : dateFrom">
+            <td>{{item.name}}</td>
+            <td>{{item.amount | currency }}</td>
+            <td>{{item.createdAt | date : 'short'}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>

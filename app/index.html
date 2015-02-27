@@ -3,38 +3,33 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+
 </head>
 <body>
 
-<div ng-controller="ItemListController">
 
-    <table>
-        <thead>
-        <th>Name</th>
-        <th>Amount</th>
-        <th>Created</th>
-        </thead>
-        <tbody>
-        <tr ng-repeat="item in items">
-            <td>{{item.name}}</td>
-            <td>{{item.amount | currency }}</td>
-            <td>{{item.createdAt | date : 'short'}}</td>
-        </tr>
-        </tbody>
-    </table>
 
-    <form>
-        <input type="text" placeholder="name" ng-model="item.name"/>
-        <input type="text" placeholder="amount" ng-model="item.amount"/>
-        <input type="submit" ng-click="addItem(item)" value="Add item"/>
-    </form>
+<tabset>
+    <tab heading="First tab">
+        <item-form></item-form>
 
-</div>
+
+    </tab>
+    
+    <tab heading="Second tab">
+        <input type="text" ng-model="query" placeholder="Search"/>
+        <item-list query="query"></item-list>
+    </tab>
+</tabset>
 
 <!-- external dependecies -->
 <script src="./bower_components/angular/angular.min.js"></script>
 <script src="./bower_components/angular-mocks/angular-mocks.js"></script>
 <script src="./bower_components/angular-resource/angular-resource.min.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 
 <!-- dependecies -->
 
