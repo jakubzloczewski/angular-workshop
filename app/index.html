@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="feb27">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<div ng-controller="ItemListController">
+
+    <table>
+        <thead>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Created</th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in items">
+            <td>{{item.name}}</td>
+            <td>{{item.amount | currency }}</td>
+            <td>{{item.createdAt | date : 'short'}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <form>
+        <input type="text" placeholder="name" ng-model="item.name"/>
+        <input type="text" placeholder="amount" ng-model="item.amount"/>
+        <input type="submit" ng-click="addItem(item)" value="Add item"/>
+    </form>
+
+</div>
+
+<!-- external dependecies -->
+<script src="./bower_components/angular/angular.min.js"></script>
+<script src="./bower_components/angular-mocks/angular-mocks.js"></script>
+<script src="./bower_components/angular-resource/angular-resource.min.js"></script>
+
+<!-- dependecies -->
+
+<script src="components/fakeApi.js"></script>
+<script src="components/common/common.js"></script>
+<script src="components/items/items.js"></script>
+
+<!-- app -->
+<script src="./app.js"></script>
+
+
+</body>
+</html>
