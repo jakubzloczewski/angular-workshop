@@ -26,8 +26,10 @@
                     error : false
                 };
 
+                console.log(itemToCheck);
                 items.forEach(function(item){
-                    if(item.name === itemToCheck.name ){
+                    console.log(item);
+                    if(item.name === itemToCheck.name){
                         response.error = true;
                         response.message = 'Already used';
                     }
