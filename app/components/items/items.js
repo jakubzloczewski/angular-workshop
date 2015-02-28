@@ -15,12 +15,12 @@
             $scope.addItem = function (item, isValid) {
                 if (isValid) {
                     Items.save(item, function (response) {
-                        $scope.items.push(response)
+                        $scope.items.push(response);
                     });
                 } else {
                     alert('Invalid');
                 }
-            }
+            };
         }])
         .directive('itemList', function () {
             return {

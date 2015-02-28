@@ -9,20 +9,28 @@
                required
                item-name-uniqueness />
 
-        <label class="label-warning" ng-show="myForm.name.$error.required">
+        <label class="text-warning" ng-show="myForm.name.$error.required">
             This field is required.
         </label>
-        <label class="label-warning" ng-show="myForm.name.$error.itemNameUniqueness">
+        <label class="text-warning" ng-show="myForm.name.$error.itemNameUniqueness">
             Name in use.
         </label>
 
     </div>
     
     <div ng-class="{ 'has-error' : myForm.amount.$invalid }">
+        
         <input class="form-control" 
-               type="text" placeholder="amount" name="amount" ng-model="item.amount" required/>
-        
-        
+               type="number" placeholder="amount" name="amount" ng-model="item.amount" required gt-than="5"/>
+        <label class="text-warning" ng-show="myForm.amount.$error.required">
+            This field is required.
+        </label>
+
+        <label class="text-warning" ng-show="myForm.amount.$error.gtThan">
+            This field should be greater than 5
+        </label>
+
+
     </div>
     
     <input type="submit" ng-click="addItem(item, myForm.$valid)" value="Add item"/>

@@ -26,16 +26,14 @@
                     error : false
                 };
 
-                console.log(itemToCheck);
                 items.forEach(function(item){
-                    console.log(item);
                     if(item.name === itemToCheck.name){
                         response.error = true;
                         response.message = 'Already used';
                     }
                 });
                 
-                return [200, response, {}]
+                return [200, response, {}];
             });
             
             $httpBackend.whenPOST('/api/items').respond(function(method, url, data){
